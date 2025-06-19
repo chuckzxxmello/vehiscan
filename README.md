@@ -20,6 +20,8 @@ npx expo install --check
 
 ```bash
 npx expo start
+
+# to clear cache before launch
 npx expo start -c
 npx expo start --clear
 ```
