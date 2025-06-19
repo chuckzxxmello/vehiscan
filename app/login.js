@@ -216,6 +216,7 @@ export default function Login() {
       await sendPasswordResetEmail(auth, sanitizedEmail);
       Alert.alert('Reset Password', 'A password reset email has been sent to your email address.');
     } catch (error) {
+      console.log('Password reset error:', error);
       Alert.alert('Reset Password Failed', error.message);
     }
   };
