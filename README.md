@@ -16,6 +16,14 @@ npx expo-doctor
 npx expo install --check
 ```
 
+## Run the App
+
+```bash
+npx expo start
+npx expo start -c
+npx expo start --clear
+```
+
 ## Development Commands
 
 > **Note:** The following commands are for development reference only
