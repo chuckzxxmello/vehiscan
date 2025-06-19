@@ -1,0 +1,58 @@
+#clean and restart the entire app
+rm -rf node_modules package-lock.json .expo .expo-shared metro-cache
+npm install
+npx expo start --clear
+
+#check for some incompatible dependency package
+npx expo install --check
+
+#fixed npm install vulnerabilities
+npm audit fix
+
+#check for expo vulnerabilities
+npx expo-doctor
+
+#install retire.js
+npm install -g retire
+retire --path ./
+
+#removed C:\Users\User\Documents\VehiScan\VehiScan-main\app\(app)\_layout.js
+#updated 
+
+#update fix for C:\Users\User\Documents\VehiScan\VehiScan-main\context\authContext.js
+**import { onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";**
+
+#update fox C:\Users\User\Documents\VehiScan\VehiScan-main\app\_layout.js
+**merged ./app/_layout.js and ./app/(app)/_layout.js**
+
+*other
+
+#update dependencies for the issue:
+"The following packages should be updated for best compatibility with the installed expo version:
+  expo@52.0.27 - expected version: ~52.0.46
+  expo-camera@16.0.13 - expected version: ~16.0.18
+  expo-font@13.0.3 - expected version: ~13.0.4
+  expo-linking@7.0.4 - expected version: ~7.0.5
+  expo-media-library@17.0.5 - expected version: ~17.0.6
+  expo-notifications@0.29.12 - expected version: ~0.29.14
+  expo-router@4.0.17 - expected version: ~4.0.21
+  expo-splash-screen@0.29.21 - expected version: ~0.29.24
+  expo-system-ui@4.0.7 - expected version: ~4.0.9
+  react-native@0.76.6 - expected version: 0.76.9
+  jest-expo@52.0.3 - expected version: ~52.0.6
+Your project may not work correctly until you install the expected versions of the packages."
+**npx expo install --fix**
+
+#removed react-native-responsive-screen, unmaintained and untested on new expo architecture
+#replaced with react-native-super-grid
+**npm install react-native-super-grid**
+
+#modified app.json
+**        
+"package": "com.yourcompany.vehiscan",
+        "permissions": [
+          "CAMERA"
+        ]
+**
+
+#updated the package.json [via the new npm install --fix & npm audit fx]
