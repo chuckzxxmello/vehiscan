@@ -3,15 +3,12 @@
 ## Initial Setup
 
 ```bash
+# to remove any existing packages, clean setup
 rm -rf node_modules package-lock.json
+
 npm install
-npx expo-doctor
-npx expo install --check
-```
 
-## Health Check
-
-```bash
+# to check app status
 npx expo-doctor
 npx expo install --check
 ```
