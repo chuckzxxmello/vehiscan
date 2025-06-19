@@ -194,7 +194,7 @@ export default function Login() {
       if (currentUser.emailVerified) {
         await clearFailedAttempts(currentUser.email);
         setPendingVerification(false);
-        router.replace('(app)/main');
+        router.replace('(app)/login'); // Redirect to login page after verification
       } else {
         Alert.alert('Not Verified', 'Your email is still not verified. Please check your inbox.');
       }
@@ -260,26 +260,27 @@ export default function Login() {
   }
 
   return (
-    <View className="flex-1 justify-center items-center bg-[#D0DDD0] px-4">
+    <View className="flex-1 justify-center items-center bg-[#4169E1] px-4">
+      {/* Logo Section */}
       <View className="mb-8 items-center">
         <Image
-          //source={require('./path-to-your-logo.png')}
-          style={{ width: 100, height: 100, marginBottom: 8 }}
+          source={require('./../assets/images/Vehiscan.png')}
+          style={{ width: 250, height: 250, marginBottom: 8 }}
         />
         <Text className="text-4xl font-bold text-white">VehiScan</Text>
       </View>
 
       <TextInput
-        className="w-full max-w-md border border-gray-400 rounded-lg p-4 mb-4 text-base bg-[#F0F0D7] text-black"
+        className="w-full max-w-md border border-gray-400 rounded-lg p-4 mb-4 text-base bg-[#A29BFE] text-white"
         placeholder="Email Address"
-        placeholderTextColor="#A0A0A0"
+        placeholderTextColor="#F5F6FA"
         value={email}
         onChangeText={setEmail}
       />
       <TextInput
-        className="w-full max-w-md border border-gray-400 rounded-lg p-4 mb-4 text-base bg-[#F0F0D7] text-black"
+        className="w-full max-w-md border border-gray-400 rounded-lg p-4 mb-4 text-base bg-[#A29BFE] text-white"
         placeholder="Password"
-        placeholderTextColor="#A0A0A0"
+        placeholderTextColor="#F5F6FA"
         value={password}
         onChangeText={setPassword}
         secureTextEntry
@@ -288,15 +289,15 @@ export default function Login() {
         onPress={handleForgotPassword}
         style={{ alignSelf: 'flex-end', marginBottom: 12 }}
       >
-        <Text style={{ color: '#4285F4', fontWeight: 'bold' }}>Forgot Password?</Text>
+        <Text style={{ color: '#2ECC71', fontWeight: 'bold' }}>Forgot Password?</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
-        className="w-full max-w-md bg-[#727D73] rounded-lg p-4 mb-4"
+        className="w-full max-w-md bg-[#D1D5DB] rounded-lg p-4 mb-4"    
         onPress={handleLogin}
         disabled={loading}
       >
-        <Text className="text-center text-white font-bold">
+      <Text className="text-center text-[#4169E1] font-bold">
           {loading ? 'Logging In...' : 'Log In'}
         </Text>
       </TouchableOpacity>
@@ -307,10 +308,11 @@ export default function Login() {
         </Text>
       )}
 
+      {/* Create Account */}
       <View className="flex-row items-center justify-center">
-        <Text className="text-gray-500 mt-4">Don't have an account?</Text>
+        <Text className="text-[#F5F6FA] mt-4">Don't have an account?</Text>
         <Pressable onPress={() => router.replace('signup')}>
-          <Text className="text-indigo-500 mt-4"> Sign Up</Text>
+          <Text className="text-[#2ECC71] mt-4"> Sign Up</Text>
         </Pressable>
       </View>
     </View>
