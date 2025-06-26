@@ -52,7 +52,7 @@ npx expo install --check
 ```
 
 ## Run the App
-**Start the development server:***
+**Start the development server:**
    ```bash
    npx expo start
    #or
